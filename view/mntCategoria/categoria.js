@@ -18,18 +18,26 @@ function guardaryeditar(e){
         success: function(datos){    
             console.log(datos);
 
-            $('#mnt_form')[0].reset();
-            /*TODO: Ocultar modal */
-            $("#mdlmnt").modal('hide');
+            if (datos=="ok"){
+                $('#mnt_form')[0].reset();
+                /* TODO:Ocultar Modal */
+                $("#mdlmnt").modal('hide');
+                $('#lista_data').DataTable().ajax.reload();
 
-            $('#lista_data').DataTable().ajax.reload();
-
-            swal({
-                title: 'Cotizador',
-                text: 'Resgistro GUardado',
-                icon: 'success',
-                confirmButtonClass: 'btn-success'
-            });
+                swal({
+                    title: "Cotizador!",
+                    text: "Registro Guardado.",
+                    icon: "success",
+                    confirmButtonClass: "btn-success"
+                });
+            }else{
+                swal({
+                    title: "Cotizador!",
+                    text: "Registro Duplicado.",
+                    icon: "warning",
+                    confirmButtonClass: "btn-danger"
+                });
+            }
            
         }
     });

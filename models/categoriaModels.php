@@ -4,7 +4,7 @@ class categoriaModels extends Conectar{
     public function get_category(){
         $conetar = parent::Conexion();
         parent::set_names();
-        $sql = "select * from categoria where categoriaEstado = 1;";
+        $sql = "select * from categoria where categoriaEstado = 1 order by categoriaId desc;";
         $sql = $conetar->prepare($sql);
         $sql->execute();
         return $resultado = $sql->fetchAll();
@@ -49,6 +49,20 @@ class categoriaModels extends Conectar{
         $sql = "select * from categoria where categoriaId = ?";
         $sql = $conetar->prepare($sql);
         $sql->bindValue(1,$categoryId);
+        $sql->execute();
+        //Se Obtiene los resultados de la consulta en un arreglo
+        return $resultado = $sql->fetchAll();
+    }
+    //Funcion para obtenr nombre de una categoria especfica de la base de datos
+    public function get_category_x_nombre($categoriaNombre){
+        //Se Establece la conexion a la base de datos
+        $conetar = parent::Conexion();
+        //Se configura la codificaion de carateres
+        parent::set_names();
+        //Se define la consulta SQL para la obtencion de un resgitro
+        $sql = "select * from categoria where categoriaNombre = ? and categoriaEstado=1";
+        $sql = $conetar->prepare($sql);
+        $sql->bindValue(1,$categoriaNombre);
         $sql->execute();
         //Se Obtiene los resultados de la consulta en un arreglo
         return $resultado = $sql->fetchAll();

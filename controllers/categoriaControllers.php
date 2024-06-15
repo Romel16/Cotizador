@@ -11,10 +11,18 @@
         case 'guardaryeditar':
             //TODO: Si no se recibe el campo category en el formulario, se inserta una nueva categoría
             if (empty($_POST["categoriaId"])) {
-                $categoria->insert_category($_POST["categoriaNombre"], $_POST["categoriaDescripcion"]);
+                $datos = $categoria->get_category_x_nombre($_POST["categoriaNombre"]);
+                if (is_array($datos) == true and count($datos) > 0) {
+                    echo "error";
+                }else{
+                    $categoria->insert_category($_POST["categoriaNombre"], $_POST["categoriaDescripcion"]);
+                    echo "ok";
+                }
+
             } else {
                 //TODO: Si se recibe el campo category en el formulario, se actualiza la categoría existente
                 $categoria->update_category($_POST["categoriaId"], $_POST["categoriaNombre"], $_POST["categoriaDescripcion"]);
+                echo  "ok";
             }
             break;
         case 'listar':
