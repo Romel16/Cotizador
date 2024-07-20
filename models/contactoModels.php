@@ -62,6 +62,16 @@ class contactoModels extends Conectar{
         $sql->execute();
         return $resultado = $sql->fetchAll();
     }
+    // Función para obtener un contacto específico de la base de datos
+    public function get_contact_x_cliente_id($clienteId){
+        $conectar = parent::Conexion();
+        parent::set_names();
+        $sql = "SELECT * FROM `contacto` where contactoClienteId = ? and contactoEstado = 1;";
+        $sql = $conectar->prepare($sql);
+        $sql->bindValue(1, $clienteId);
+        $sql->execute();
+        return $resultado = $sql->fetchAll();
+    }
 
 }
 ?>

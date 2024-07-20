@@ -73,4 +73,15 @@ class productoModels extends Conectar{
         return $resultado = $sql->fetchAll();
     }
 
+    // Función para obtener un contacto específico de la base de datos
+    public function get_producto_x_categoria_id($categoriaId){
+        $conectar = parent::Conexion();
+        parent::set_names();
+        $sql = "SELECT * FROM `producto` where productoCategoriaId = ? and productoEstado = 1;";
+        $sql = $conectar->prepare($sql);
+        $sql->bindValue(1, $categoriaId);
+        $sql->execute();
+        return $resultado = $sql->fetchAll();
+    }
+
 }

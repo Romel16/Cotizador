@@ -63,8 +63,8 @@ switch ($_GET["op"]) {
         break;
 
     //TODO: Código para operación combo
-    case 'combo':
-        $datos = $producto->get_productos();
+    case 'combo_x_categoria':
+        $datos = $producto->get_producto_x_categoria_id($_POST["productoCategoriaId"]);
         if (is_array($datos) == true and count($datos) > 0) {
             $html="";
             $html="<option selected>Seleccionar</option>";

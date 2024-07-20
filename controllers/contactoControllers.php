@@ -65,8 +65,8 @@ switch ($_GET["op"]) {
         break;
 
     //TODO: Código para operación combo
-    case 'combo':
-        $datos = $contacto->get_contacts();
+    case 'combo_x_cliente':
+        $datos = $contacto->get_contact_x_cliente_id($_POST["clienteId"]);
         if (is_array($datos) == true and count($datos) > 0) {
             $html="";
             $html="<option selected>Seleccionar</option>";
