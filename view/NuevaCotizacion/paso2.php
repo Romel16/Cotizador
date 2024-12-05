@@ -38,7 +38,7 @@
                 <div class="col-md-3">
                     <div class="form-group">
                         <label for="cotd_cant">Cant *</label>
-                        <input type="number" class="form-control" id="cotd_cant" name="cotd_cant" placeholder="0" required>
+                        <input type="number" class="form-control" id="cotd_cant" name="cotd_cant" min="0" step="1" placeholder="0" required>
                     </div>
                 </div>
 
@@ -84,19 +84,19 @@
                                     <div class="invoice-price-row">
                                         <div class="sub-price">
                                             <small>SubTotal</small>
-                                            <span class="text-inverse" id="cot_subtotal">$ 0.00</span>
+                                            <span class="text-inverse" id="cot_subtotal">0.00</span>
                                         </div>
                                         <div class="sub-price">
                                             <i class="fa fa-plus text-muted"></i>
                                         </div>
                                         <div class="sub-price">
                                             <small>Profit (20%)</small>
-                                            <span class="text-inverse" id="cot_profit">$ 0.00</span>
+                                            <span class="text-inverse" id="cot_profit">0.00</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="invoice-price-right">
-                                    <small>TOTAL</small> <span class="f-w-600" id="cot_total">$0.00</span>
+                                    <small>TOTAL</small> <span class="f-w-600" id="cot_total">0.00</span>
                                 </div>
                             </div>
                         </div>

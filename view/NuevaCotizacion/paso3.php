@@ -38,7 +38,7 @@
                 <div class="col-md-3">
                     <div class="form-group">
                         <label for="cotd_cant_a">Cant *</label>
-                        <input type="number" class="form-control" id="cotd_cant_a" name="cotd_cant_a" placeholder="0" required>
+                        <input type="number" class="form-control" id="cotd_cant_a" name="cotd_cant_a" min="0" step="1"placeholder="0" required>
                     </div>
                 </div>
 

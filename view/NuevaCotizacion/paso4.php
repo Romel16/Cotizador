@@ -75,17 +75,20 @@
                     <div class="invoice-price-left">
                         <div class="invoice-price-row">
                             <div class="sub-price">
+                                <small>SubTotal</small>
+                                <span class="text-inverse" id="cot_subtotal">$ 0.00</span>
                             </div>
                             <div class="sub-price">
-
+                                <i class="fa fa-plus text-muted"></i>
                             </div>
                             <div class="sub-price">
-
+                                <small>Profit (20%)</small>
+                                <span class="text-inverse" id="cot_profit">$ 0.00</span>
                             </div>
                         </div>
                     </div>
                     <div class="invoice-price-right">
-                        <small>TOTAL</small> <span class="f-w-500" id="v_cot_total"></span>
+                        <small>TOTAL</small> <span class="f-w-500" id="v_cot_total">$ 0.00</span>
                     </div>
                 </div>
                 <!-- end invoice-price -->
